@@ -7,8 +7,20 @@
 <title>Dunn Right Services — Home Repair & General Contracting · Treasure Valley, ID</title>
 <meta name="description" content="Dunn Right Services LLC — The Treasure Valley's highest-rated home repair team. Plumbing, electrical, carpentry, decking, kitchens, drywall. 30+ years combined experience. Licensed, insured, 24/7 emergency service. Call (208) 917-2122." />
 <meta property="og:title" content="Dunn Right Services — Treasure Valley" />
-<meta property="og:description" content="Plumbing · Electrical · Carpentry · Decking · Kitchens. Licensed GC, 30+ yrs experience, 24/7 emergency." />
+<meta property="og:description" content="Plumbing · Electrical · Carpentry · Decking · Kitchens. Licensed GC #RCT-70780, 30+ yrs experience, 24/7 emergency. Call (208) 917-2122." />
 <meta property="og:type" content="website" />
+<meta property="og:url" content="https://blessedconstructionems-del.github.io/dunn-right-services/" />
+<meta property="og:site_name" content="Dunn Right Services" />
+<meta property="og:image" content="https://blessedconstructionems-del.github.io/dunn-right-services/og.jpg" />
+<meta property="og:image:secure_url" content="https://blessedconstructionems-del.github.io/dunn-right-services/og.jpg" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Dunn Right Services — Treasure Valley home repair · Licensed · 24/7 Emergency" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Dunn Right Services — Treasure Valley" />
+<meta name="twitter:description" content="Plumbing · Electrical · Carpentry · Decking · Kitchens. Licensed, 30+ yrs experience. 24/7 emergency." />
+<meta name="twitter:image" content="https://blessedconstructionems-del.github.io/dunn-right-services/og.jpg" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23f97316'/%3E%3Ctext x='50' y='66' font-size='44' font-family='Georgia,serif' font-weight='900' text-anchor='middle' fill='%230a0a0c'%3EDR%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -107,14 +119,15 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit
 }
 .hero-bg{
   position:absolute;inset:0;z-index:-2;
-  background-image:url('https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&w=2400&q=80');
-  background-size:cover;background-position:center;
-  animation:kenburns 20s ease-in-out infinite alternate;
-  filter:saturate(1.1);
+  width:100%;height:100%;
+  object-fit:cover;
+  filter:saturate(1.05) brightness(.78) contrast(1.05);
 }
-@keyframes kenburns{
-  from{transform:scale(1.05) translate(0,0)}
-  to{transform:scale(1.18) translate(-2%,-2%)}
+.hero-bg-img{
+  position:absolute;inset:0;z-index:-3;
+  width:100%;height:100%;
+  object-fit:cover;
+  filter:saturate(1.05) brightness(.6) contrast(1.05);
 }
 .hero-overlay{
   position:absolute;inset:0;z-index:-1;
@@ -324,30 +337,88 @@ section{padding:100px 28px;position:relative}
 .about-stat-num{font-family:var(--serif);font-size:42px;font-weight:800;color:var(--accent);line-height:1}
 .about-stat-label{font-size:13px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-top:4px}
 
-/* ===== GALLERY ===== */
+/* ===== GALLERY (BEFORE / AFTER) ===== */
 .gallery{background:var(--bg)}
-.gallery-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:14px;
+.ba-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:28px;
 }
-.gallery-item{
-  position:relative;aspect-ratio:1;
-  border-radius:var(--radius);overflow:hidden;
-  cursor:pointer;
+.ba-pair{
+  background:var(--bg-2);
+  border:1px solid var(--line);
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;
 }
-.gallery-item img{
+.ba-pair:hover{
+  transform:translateY(-6px);
+  border-color:rgba(249,115,22,.4);
+  box-shadow:0 24px 60px -12px rgba(0,0,0,.55);
+}
+.ba-pair-imgs{
+  display:grid;grid-template-columns:1fr 1fr;
+  position:relative;
+}
+.ba-pair-imgs::before{
+  content:"";
+  position:absolute;left:50%;top:0;bottom:0;
+  width:2px;background:linear-gradient(180deg,transparent,rgba(249,115,22,.55),transparent);
+  transform:translateX(-50%);
+  z-index:3;
+}
+.ba-pair-imgs::after{
+  content:"→";
+  position:absolute;left:50%;top:50%;
+  transform:translate(-50%,-50%);
+  width:52px;height:52px;border-radius:50%;
+  background:var(--accent);color:#0a0a0c;
+  display:grid;place-items:center;
+  font-weight:900;font-size:24px;
+  z-index:5;
+  box-shadow:0 8px 24px rgba(249,115,22,.55),0 0 0 4px rgba(10,10,12,.9);
+}
+.ba-side{
+  position:relative;aspect-ratio:1;overflow:hidden;
+}
+.ba-side img{
   width:100%;height:100%;object-fit:cover;
-  transition:transform .6s ease;
+  transition:transform .6s ease,filter .6s ease;
 }
-.gallery-item:hover img{transform:scale(1.08)}
-.gallery-item::after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.5));
-  opacity:0;transition:opacity .3s ease;
+.ba-pair:hover .ba-side img{transform:scale(1.06)}
+.ba-before img{
+  filter:grayscale(.85) brightness(.6) contrast(1.05);
 }
-.gallery-item:hover::after{opacity:1}
-.gallery-item.tall{grid-row:span 2;aspect-ratio:1/2}
-.gallery-item.wide{grid-column:span 2;aspect-ratio:2/1}
+.ba-pair:hover .ba-before img{filter:grayscale(.7) brightness(.65) contrast(1.05)}
+.ba-label{
+  position:absolute;top:14px;left:14px;
+  padding:6px 12px;
+  font-size:10px;font-weight:800;
+  letter-spacing:.16em;text-transform:uppercase;
+  border-radius:999px;
+  background:rgba(10,10,12,.88);
+  backdrop-filter:blur(10px);
+  border:1px solid var(--line-strong);
+  color:#fafaf7;
+  z-index:4;
+}
+.ba-after .ba-label{
+  color:var(--accent);
+  border-color:rgba(249,115,22,.5);
+  background:rgba(249,115,22,.12);
+}
+.ba-caption{
+  padding:20px 24px;
+  border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+}
+.ba-caption-title{
+  font-family:var(--serif);
+  font-weight:700;font-size:18px;letter-spacing:-.01em;
+}
+.ba-caption-sub{
+  font-size:12px;color:var(--muted);font-weight:500;
+  letter-spacing:.04em;text-transform:uppercase;
+}
 
 /* ===== REVIEWS ===== */
 .reviews{
@@ -520,7 +591,7 @@ section{padding:100px 28px;position:relative}
   .proof-inner{grid-template-columns:repeat(2,1fr);gap:20px}
   .about-grid{grid-template-columns:1fr;gap:40px}
   .about-img{max-width:480px;margin:0 auto}
-  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .ba-grid{grid-template-columns:1fr;gap:20px}
   .reviews-grid{grid-template-columns:1fr}
   .area-grid{grid-template-columns:1fr;gap:40px}
   .cities{grid-template-columns:repeat(2,1fr)}
@@ -535,8 +606,7 @@ section{padding:100px 28px;position:relative}
   .hero{padding:130px 18px 40px;min-height:90vh}
   section{padding:60px 18px}
   .footer-grid{grid-template-columns:1fr}
-  .gallery-item.tall{grid-row:auto;aspect-ratio:1}
-  .gallery-item.wide{grid-column:auto;aspect-ratio:1}
+  .ba-caption{flex-direction:column;align-items:flex-start;gap:6px}
   .reviews-summary{flex-direction:column;text-align:center}
   .sticky-call{bottom:14px;right:14px;padding:14px 18px;font-size:14px}
   .btn{padding:16px 22px;font-size:15px}
@@ -568,7 +638,10 @@ section{padding:100px 28px;position:relative}
 
 <!-- HERO -->
 <header class="hero" id="top">
-  <div class="hero-bg"></div>
+  <img class="hero-bg-img" src="og.jpg" alt="" aria-hidden="true" />
+  <video class="hero-bg" autoplay muted loop playsinline preload="auto" poster="og.jpg">
+    <source src="hero.mp4" type="video/mp4" />
+  </video>
   <div class="hero-overlay"></div>
   <div class="hero-inner">
     <div class="eyebrow">
@@ -712,7 +785,7 @@ section{padding:100px 28px;position:relative}
   <div class="container">
     <div class="about-grid">
       <div class="about-img reveal">
-        <img src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=1200&q=80" alt="Dunn Right Services craftsman at work in the Treasure Valley" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1572883454114-1cf0031ede2a?auto=format&fit=crop&w=1200&q=80" alt="Dunn Right Services craftsman at work in the Treasure Valley" loading="lazy" />
         <div class="about-badge">
           <div class="about-badge-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -743,21 +816,79 @@ section{padding:100px 28px;position:relative}
   </div>
 </section>
 
-<!-- GALLERY -->
+<!-- GALLERY (BEFORE / AFTER) -->
 <section class="gallery" id="gallery">
   <div class="container">
     <div class="section-head reveal">
       <div class="section-eyebrow">Recent Work</div>
-      <h2 class="section-title">A few we're <em>proud of</em>.</h2>
-      <p class="section-lede">Kitchens, decks, drywall, electrical, plumbing — every project gets the same attention to detail and the same warranty.</p>
+      <h2 class="section-title">Before. <em>After.</em></h2>
+      <p class="section-lede">Real Treasure Valley projects, finished by Ryan and the crew. Every one demoed, framed, and finished under one license — no subs disappearing on you.</p>
     </div>
-    <div class="gallery-grid">
-      <div class="gallery-item reveal wide"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1400&q=80" alt="Kitchen remodel by Dunn Right Services" loading="lazy"/></div>
-      <div class="gallery-item reveal tall"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="Custom carpentry detail" loading="lazy"/></div>
-      <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80" alt="Bathroom remodel" loading="lazy"/></div>
-      <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1591474200742-8e512e6f98f8?auto=format&fit=crop&w=900&q=80" alt="Composite decking install" loading="lazy"/></div>
-      <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&w=900&q=80" alt="Drywall finish work" loading="lazy"/></div>
-      <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&w=900&q=80" alt="Contractor tools and craftsmanship" loading="lazy"/></div>
+    <div class="ba-grid">
+      <div class="ba-pair reveal">
+        <div class="ba-pair-imgs">
+          <div class="ba-side ba-before">
+            <span class="ba-label">Before</span>
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80" alt="Kitchen before remodel — empty pre-finish" loading="lazy"/>
+          </div>
+          <div class="ba-side ba-after">
+            <span class="ba-label">After</span>
+            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=900&q=80" alt="Kitchen after — finished modern remodel" loading="lazy"/>
+          </div>
+        </div>
+        <div class="ba-caption">
+          <div class="ba-caption-title">Kitchen Remodel</div>
+          <div class="ba-caption-sub">Boise · Cabinets · Counters · Tile</div>
+        </div>
+      </div>
+      <div class="ba-pair reveal">
+        <div class="ba-pair-imgs">
+          <div class="ba-side ba-before">
+            <span class="ba-label">Before</span>
+            <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&w=900&q=80" alt="Bathroom before — work in progress" loading="lazy"/>
+          </div>
+          <div class="ba-side ba-after">
+            <span class="ba-label">After</span>
+            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80" alt="Bathroom after — full refresh" loading="lazy"/>
+          </div>
+        </div>
+        <div class="ba-caption">
+          <div class="ba-caption-title">Bathroom Refresh</div>
+          <div class="ba-caption-sub">Meridian · Tile · Fixtures · Plumbing</div>
+        </div>
+      </div>
+      <div class="ba-pair reveal">
+        <div class="ba-pair-imgs">
+          <div class="ba-side ba-before">
+            <span class="ba-label">Before</span>
+            <img src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&w=900&q=80" alt="Drywall before — patch &amp; texture work" loading="lazy"/>
+          </div>
+          <div class="ba-side ba-after">
+            <span class="ba-label">After</span>
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="Drywall after — finished interior" loading="lazy"/>
+          </div>
+        </div>
+        <div class="ba-caption">
+          <div class="ba-caption-title">Drywall &amp; Finish</div>
+          <div class="ba-caption-sub">Nampa · Patch · Texture-Match · Paint-Ready</div>
+        </div>
+      </div>
+      <div class="ba-pair reveal">
+        <div class="ba-pair-imgs">
+          <div class="ba-side ba-before">
+            <span class="ba-label">Before</span>
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80" alt="Deck before — old surface" loading="lazy"/>
+          </div>
+          <div class="ba-side ba-after">
+            <span class="ba-label">After</span>
+            <img src="https://images.unsplash.com/photo-1591474200742-8e512e6f98f8?auto=format&fit=crop&w=900&q=80" alt="Deck after — composite Trex install" loading="lazy"/>
+          </div>
+        </div>
+        <div class="ba-caption">
+          <div class="ba-caption-title">Composite Deck</div>
+          <div class="ba-caption-sub">Caldwell · Trex · Railings · Stairs</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
