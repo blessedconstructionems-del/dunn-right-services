@@ -21,7 +21,7 @@
 <meta name="twitter:title" content="Dunn Right Services — Treasure Valley" />
 <meta name="twitter:description" content="Plumbing · Electrical · Carpentry · Decking · Kitchens. Licensed, 30+ yrs experience. 24/7 emergency." />
 <meta name="twitter:image" content="https://blessedconstructionems-del.github.io/dunn-right-services/og.jpg" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23f97316'/%3E%3Ctext x='50' y='66' font-size='44' font-family='Georgia,serif' font-weight='900' text-anchor='middle' fill='%230a0a0c'%3EDR%3C/text%3E%3C/svg%3E" />
+<link rel="icon" type="image/png" href="logo.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
@@ -34,10 +34,10 @@
   --line-strong:rgba(255,255,255,.18);
   --text:#fafaf7;
   --muted:#a8a8a3;
-  --accent:#f97316;
-  --accent-2:#ea580c;
-  --accent-deep:#9a3412;
-  --accent-soft:rgba(249,115,22,.12);
+  --accent:#dc2626;
+  --accent-2:#b91c1c;
+  --accent-deep:#7f1d1d;
+  --accent-soft:rgba(220,38,38,.12);
   --success:#10b981;
   --danger:#ef4444;
   --shadow:0 20px 60px -10px rgba(0,0,0,.6);
@@ -88,12 +88,15 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit
 .nav.scrolled{padding:12px 28px;background:rgba(10,10,12,.94)}
 .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:-.02em}
 .brand-mark{
-  width:42px;height:42px;border-radius:11px;
-  background:linear-gradient(135deg,var(--accent) 0%,var(--accent-2) 100%);
+  width:46px;height:46px;
   display:grid;place-items:center;
-  color:#0a0a0c;font-family:var(--serif);font-weight:900;font-size:17px;
-  box-shadow:0 6px 20px rgba(249,115,22,.35);
-  letter-spacing:-.02em;
+  filter:drop-shadow(0 6px 18px rgba(220,38,38,.45));
+  flex-shrink:0;
+}
+.brand-mark img{
+  width:100%;height:100%;
+  object-fit:contain;
+  display:block;
 }
 .brand-text{font-size:15px;line-height:1.1}
 .brand-text strong{display:block;font-size:16px}
@@ -104,9 +107,9 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit
   background:var(--accent);color:#0a0a0c;
   border-radius:999px;font-weight:700;font-size:14px;
   transition:transform .2s ease,box-shadow .2s ease;
-  box-shadow:0 6px 18px rgba(249,115,22,.3);
+  box-shadow:0 6px 18px rgba(220,38,38,.3);
 }
-.nav-cta:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(249,115,22,.5);background:#fb923c}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(220,38,38,.5);background:#ef4444}
 .nav-cta svg{width:16px;height:16px}
 
 /* ===== HERO ===== */
@@ -132,7 +135,7 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit
 .hero-overlay{
   position:absolute;inset:0;z-index:-1;
   background:
-    radial-gradient(ellipse at 30% 40%,rgba(249,115,22,.15),transparent 60%),
+    radial-gradient(ellipse at 30% 40%,rgba(220,38,38,.15),transparent 60%),
     linear-gradient(180deg,rgba(10,10,12,.55) 0%,rgba(10,10,12,.85) 60%,var(--bg) 100%);
 }
 .hero-inner{max-width:var(--max);margin:0 auto;width:100%;position:relative}
@@ -140,7 +143,7 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit
   display:inline-flex;align-items:center;gap:10px;
   padding:8px 16px;
   background:var(--accent-soft);
-  border:1px solid rgba(249,115,22,.32);
+  border:1px solid rgba(220,38,38,.32);
   border-radius:999px;
   font-size:13px;font-weight:600;letter-spacing:.04em;
   color:var(--accent);
@@ -178,9 +181,9 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit
 }
 .btn-primary{
   background:var(--accent);color:#0a0a0c;
-  box-shadow:0 10px 30px rgba(249,115,22,.35);
+  box-shadow:0 10px 30px rgba(220,38,38,.35);
 }
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(249,115,22,.5);background:#fb923c}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(220,38,38,.5);background:#ef4444}
 .btn-ghost{
   background:rgba(255,255,255,.08);color:var(--text);
   border:1px solid var(--line-strong);
@@ -250,10 +253,10 @@ section{padding:100px 28px;position:relative}
 }
 .service::before{
   content:"";position:absolute;inset:0;
-  background:linear-gradient(135deg,rgba(249,115,22,.08),transparent 60%);
+  background:linear-gradient(135deg,rgba(220,38,38,.08),transparent 60%);
   opacity:0;transition:opacity .3s ease;
 }
-.service:hover{transform:translateY(-6px);border-color:rgba(249,115,22,.35);background:var(--bg-3)}
+.service:hover{transform:translateY(-6px);border-color:rgba(220,38,38,.35);background:var(--bg-3)}
 .service:hover::before{opacity:1}
 .service-icon{
   width:54px;height:54px;border-radius:14px;
@@ -273,7 +276,7 @@ section{padding:100px 28px;position:relative}
 
 /* ===== EMERGENCY CALLOUT ===== */
 .emerge-callout{
-  background:linear-gradient(135deg,rgba(239,68,68,.08),rgba(249,115,22,.08));
+  background:linear-gradient(135deg,rgba(239,68,68,.08),rgba(220,38,38,.08));
   border-top:1px solid var(--line);border-bottom:1px solid var(--line);
   padding:60px 28px;
 }
@@ -352,7 +355,7 @@ section{padding:100px 28px;position:relative}
 }
 .ba-pair:hover{
   transform:translateY(-6px);
-  border-color:rgba(249,115,22,.4);
+  border-color:rgba(220,38,38,.4);
   box-shadow:0 24px 60px -12px rgba(0,0,0,.55);
 }
 .ba-pair-imgs{
@@ -362,7 +365,7 @@ section{padding:100px 28px;position:relative}
 .ba-pair-imgs::before{
   content:"";
   position:absolute;left:50%;top:0;bottom:0;
-  width:2px;background:linear-gradient(180deg,transparent,rgba(249,115,22,.55),transparent);
+  width:2px;background:linear-gradient(180deg,transparent,rgba(220,38,38,.55),transparent);
   transform:translateX(-50%);
   z-index:3;
 }
@@ -375,7 +378,7 @@ section{padding:100px 28px;position:relative}
   display:grid;place-items:center;
   font-weight:900;font-size:24px;
   z-index:5;
-  box-shadow:0 8px 24px rgba(249,115,22,.55),0 0 0 4px rgba(10,10,12,.9);
+  box-shadow:0 8px 24px rgba(220,38,38,.55),0 0 0 4px rgba(10,10,12,.9);
 }
 .ba-side{
   position:relative;aspect-ratio:1;overflow:hidden;
@@ -403,8 +406,8 @@ section{padding:100px 28px;position:relative}
 }
 .ba-after .ba-label{
   color:var(--accent);
-  border-color:rgba(249,115,22,.5);
-  background:rgba(249,115,22,.12);
+  border-color:rgba(220,38,38,.5);
+  background:rgba(220,38,38,.12);
 }
 .ba-caption{
   padding:20px 24px;
@@ -483,7 +486,7 @@ section{padding:100px 28px;position:relative}
   display:flex;align-items:center;gap:8px;
   transition:border-color .2s ease,background .2s ease;
 }
-.city:hover{border-color:rgba(249,115,22,.45);background:var(--bg-3)}
+.city:hover{border-color:rgba(220,38,38,.45);background:var(--bg-3)}
 .city-pin{color:var(--accent)}
 .city-pin svg{width:14px;height:14px}
 .area-map{
@@ -498,7 +501,7 @@ section{padding:100px 28px;position:relative}
 /* ===== CTA BIG ===== */
 .cta-big{
   background:
-    radial-gradient(ellipse at 80% 20%,rgba(249,115,22,.16),transparent 50%),
+    radial-gradient(ellipse at 80% 20%,rgba(220,38,38,.16),transparent 50%),
     linear-gradient(180deg,var(--bg-2),var(--bg));
   padding:120px 28px;
   text-align:center;
@@ -549,7 +552,7 @@ section{padding:100px 28px;position:relative}
   display:grid;place-items:center;color:var(--muted);
   transition:color .2s ease,border-color .2s ease,background .2s ease;
 }
-.footer-social a:hover{color:var(--accent);border-color:rgba(249,115,22,.4);background:var(--bg-3)}
+.footer-social a:hover{color:var(--accent);border-color:rgba(220,38,38,.4);background:var(--bg-3)}
 .footer-social svg{width:18px;height:18px}
 .footer-bottom{
   max-width:var(--max);margin:0 auto;
@@ -565,15 +568,15 @@ section{padding:100px 28px;position:relative}
   padding:16px 22px;
   background:var(--accent);color:#0a0a0c;
   border-radius:999px;font-weight:700;font-size:15px;
-  box-shadow:0 12px 40px rgba(249,115,22,.45),0 4px 12px rgba(0,0,0,.4);
+  box-shadow:0 12px 40px rgba(220,38,38,.45),0 4px 12px rgba(0,0,0,.4);
   transition:transform .2s ease,box-shadow .2s ease;
   animation:pulseRing 2.4s ease-in-out infinite;
 }
-.sticky-call:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 18px 50px rgba(249,115,22,.6)}
+.sticky-call:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 18px 50px rgba(220,38,38,.6)}
 .sticky-call svg{width:20px;height:20px}
 @keyframes pulseRing{
-  0%,100%{box-shadow:0 12px 40px rgba(249,115,22,.45),0 4px 12px rgba(0,0,0,.4),0 0 0 0 rgba(249,115,22,.55)}
-  50%{box-shadow:0 12px 40px rgba(249,115,22,.45),0 4px 12px rgba(0,0,0,.4),0 0 0 14px rgba(249,115,22,0)}
+  0%,100%{box-shadow:0 12px 40px rgba(220,38,38,.45),0 4px 12px rgba(0,0,0,.4),0 0 0 0 rgba(220,38,38,.55)}
+  50%{box-shadow:0 12px 40px rgba(220,38,38,.45),0 4px 12px rgba(0,0,0,.4),0 0 0 14px rgba(220,38,38,0)}
 }
 
 /* ===== REVEAL ===== */
@@ -624,7 +627,7 @@ section{padding:100px 28px;position:relative}
 <!-- NAV -->
 <nav class="nav" id="nav">
   <a href="#top" class="brand">
-    <div class="brand-mark">DR</div>
+    <div class="brand-mark"><img src="logo.png" alt="Dunn Right Services logo" /></div>
     <div class="brand-text">
       <strong>Dunn Right Services</strong>
       <span>Treasure Valley · Idaho</span>
@@ -1046,7 +1049,7 @@ section{padding:100px 28px;position:relative}
   <div class="footer-grid">
     <div>
       <a href="#top" class="brand">
-        <div class="brand-mark">DR</div>
+        <div class="brand-mark"><img src="logo.png" alt="Dunn Right Services logo" /></div>
         <div class="brand-text">
           <strong>Dunn Right Services</strong>
           <span>Treasure Valley · Idaho</span>
